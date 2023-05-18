@@ -2,6 +2,7 @@ import 'dart:js';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'splash_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'Calculadora MMC'),
+      home: SplashScreen(),//const //MyHomePage(title: 'Calculadora MMC'),
     );
   }
 }
