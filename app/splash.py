@@ -6,20 +6,69 @@ def main_screen(pagina: ft.Page):
 
     pagina.title = "TELA INICIAL"
     pagina.clean()
+    
+    gradient_container = ft.Container(
+        width=pagina.window_width,
+        height=pagina.window_height,
+        gradient=ft.LinearGradient(
+            colors=["#33FFF6","#9809A2"],
+            begin=ft.Alignment(-1,-1), #top-left
+            end=ft.Alignment(1,1) #bottom-right
+        )
+    )
+    
     text = ft.Text("Bem-vindo ao Wizard Showdown",
                     style=ft.TextThemeStyle.DISPLAY_LARGE)
-    pagina.add(text)
+    
+    gradient_container.content=ft.Container(
+        content=ft.Column(
+            [
+                text,
+            ],
+            horizontal_alignment=ft.CrossAxisAlignment.CENTER,
+            spacing=20
+        ),
+        padding=20
+    )
+    
+    pagina.add(gradient_container)
+    
     
 # FUNÇÃO PARA A TELA SPLASH
 def splash_screen(pagina: ft.Page):
     pagina.title="SPLASH SCREEN"
-    logo = ft.Image(src="https://e7.pngegg.com/pngimages/446/995/png-clipart-pixel-dungeon-pixel-art-boss-others-miscellaneous-game.png",
+    
+    gradient_container = ft.Container(
+        width=pagina.window_width,
+        height=pagina.window_height,
+        gradient=ft.LinearGradient(
+            colors=["#33FFF6","#9809A2"],
+            begin=ft.Alignment(-1,-1), #top-left
+            end=ft.Alignment(1,1) #bottom-right
+        )
+    )
+    
+    logo = ft.Image(src="app\pngwing.com.png",
                     width=500,height=500)
     text = ft.Text("Carregando...",
                    style=ft.TextThemeStyle.DISPLAY_LARGE,
                    color="blue")
     progress_bar = ft.ProgressBar(width=200)
-    pagina.add(logo, text, progress_bar)
+    
+    gradient_container.content=ft.Container(
+        content=ft.Column(
+            [
+                logo,
+                text,
+                progress_bar
+            ],
+            horizontal_alignment=ft.CrossAxisAlignment.CENTER,
+            spacing=20
+        ),
+        padding=20
+    )
+    
+    pagina.add(gradient_container)
     
     # SIMULA UM TEMPO DE CARREGAMENTO DDE X SEGUNDOS COM ATUALIZAÇÃO DO PROGRESSO
     for i in range(100):

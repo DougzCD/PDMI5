@@ -4,7 +4,18 @@ import flet as ft
 def main(pagina: ft.Page):
 
     pagina.title = "Pagina Teste"
-    pagina.vertical_alignment = ft.MainAxisAlignment.CENTER
+    pagina.vertical_alignment = ft.CrossAxisAlignment.CENTER
+    pagina.horizontal_alignment = ft.CrossAxisAlignment.CENTER
+    
+    gradient_container = ft.Container(
+        width=pagina.window_width,
+        height=pagina.window_height,
+        gradient=ft.LinearGradient(
+            colors=["#33FFF6","#9809A2"],
+            begin=ft.Alignment(-1,-1), #top-left
+            end=ft.Alignment(1,1) #bottom-right
+        )
+    )
     
     # Funçoes da Pagina
     
@@ -26,9 +37,24 @@ def main(pagina: ft.Page):
     password = ft.TextField(label="password",password=True , width =200)
     feedback = ft.Text(value="")
     
-    btn_logar = ft.ElevatedButton("cadastrar", on_click=btn_click)
+    login_btn = ft.ElevatedButton("cadastrar", on_click=btn_click)
+    
+    gradient_container.content=ft.Container(
+        content=ft.Column(
+            [
+                name,
+                email,
+                username,
+                password,
+                login_btn
+            ],
+            horizontal_alignment=ft.CrossAxisAlignment.CENTER,
+            spacing=20
+        ),
+        padding=20
+    )
 
-    pagina.add(name, email, username, password, feedback, btn_logar)
+    pagina.add(gradient_container)
     
     pagina.update()
 
