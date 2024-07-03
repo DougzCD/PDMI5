@@ -17,8 +17,7 @@ def main(pagina: ft.Page):
             feedback.value="Por favor preencha todos os campos"
             feedback.color="red"
         pagina.update
-        
-    
+         
     # Elementos da Pagina
     
     name = ft.TextField(label="name", width =200)
