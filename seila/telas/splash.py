@@ -48,7 +48,7 @@ def splash_screen(pagina: ft.Page):
         )
     )
     
-    logo = ft.Image(src="app\pngwing.com.png",
+    logo = ft.Image(src="../recursos/magin.png",
                     width=500,height=500)
     text = ft.Text("Carregando...",
                    style=ft.TextThemeStyle.DISPLAY_LARGE,
