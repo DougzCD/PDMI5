@@ -2,14 +2,14 @@ import flet as ft
 import time
 
 # FUNÇÃO PARA A TELA INICIAL
-def main_screen(pagina: ft.Page):
+def main_screen(page: ft.Page):
 
-    pagina.title = "TELA INICIAL"
-    pagina.clean()
+    page.title = "TELA INICIAL"
+    page.clean()
     
     gradient_container = ft.Container(
-        width=pagina.window_width,
-        height=pagina.window_height,
+        width=page.window_width,
+        height=page.window_height,
         gradient=ft.LinearGradient(
             colors=["#33FFF6","#9809A2"],
             begin=ft.Alignment(-1,-1), #top-left
@@ -31,16 +31,16 @@ def main_screen(pagina: ft.Page):
         padding=20
     )
     
-    pagina.add(gradient_container)
+    page.add(gradient_container)
     
     
 # FUNÇÃO PARA A TELA SPLASH
-def splash_screen(pagina: ft.Page):
-    pagina.title="SPLASH SCREEN"
+def splash_screen(page: ft.Page):
+    page.title="SPLASH SCREEN"
     
     gradient_container = ft.Container(
-        width=pagina.window_width,
-        height=pagina.window_height,
+        width=page.window_width,
+        height=page.window_height,
         gradient=ft.LinearGradient(
             colors=["#33FFF6","#9809A2"],
             begin=ft.Alignment(-1,-1), #top-left
@@ -48,7 +48,7 @@ def splash_screen(pagina: ft.Page):
         )
     )
     
-    logo = ft.Image(src="app\pngwing.com.png",
+    logo = ft.Image(src="pngwing.com.png",
                     width=500,height=500)
     text = ft.Text("Carregando...",
                    style=ft.TextThemeStyle.DISPLAY_LARGE,
@@ -68,20 +68,20 @@ def splash_screen(pagina: ft.Page):
         padding=20
     )
     
-    pagina.add(gradient_container)
+    page.add(gradient_container)
     
     # SIMULA UM TEMPO DE CARREGAMENTO DDE X SEGUNDOS COM ATUALIZAÇÃO DO PROGRESSO
     for i in range(100):
         progress_bar.value = i/100
-        pagina.update()
+        page.update()
         time.sleep(0.03)
         
-    main_screen(pagina)
+    main_screen(page)
 
 
 # FUNÇÃO PRINCIPAL
-def main(pagina:ft.Page):
+def main(page:ft.Page):
     
-    splash_screen(pagina)
+    splash_screen(page)
     
 ft.app(target=main)
