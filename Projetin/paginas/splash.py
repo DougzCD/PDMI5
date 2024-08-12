@@ -16,8 +16,8 @@ def splash_screen(page: ft.Page):
         )
     )
     
-    logo = ft.Image(src="maginho.png",
-                    width=500,height=500)
+    #logo = ft.Image(src="maginho.png", width=500,height=500)
+    logo = ft.Image(src="R.jpg")
     text = ft.Text("Carregando...",
                    style=ft.TextThemeStyle.DISPLAY_LARGE,
                    color="blue")

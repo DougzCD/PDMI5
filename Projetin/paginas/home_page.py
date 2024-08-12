@@ -12,7 +12,7 @@ def show_home_screen(page):
                     content=ft.Text("Bem-vindo ao aplicativo de decks!", size=30, weight=ft.FontWeight.BOLD),
                     alignment=ft.alignment.center,
                     padding=ft.Padding(20,20,20,20),
-                    bgcolor=ft.colors.LIGHT_BLUE
+                    bgcolor=ft.colors.LIGHT_BLUE,
                     width=page.window_width,
                     height=page.window_height,
                     gradient=ft.LinearGradient(

@@ -1,5 +1,5 @@
 import flet as ft
-from deck_list_page import remove_deck
+from paginas.deck_list_page import remove_deck
 
 def add_deck(deck_name, deck_list, deck_status):
     if deck_name.value:

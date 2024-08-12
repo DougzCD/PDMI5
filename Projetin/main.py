@@ -1,8 +1,8 @@
 import flet as ft
-from home_page import show_home_screen
-from deck_list_page import show_deck_list_screen
-from add_deck_page import show_add_deck_screen
-from splash import splash_screen
+from paginas.home_page import show_home_screen
+from paginas.deck_list_page import show_deck_list_screen
+from paginas.add_deck_page import show_add_deck_screen
+from paginas.splash import splash_screen
 
 def main(page: ft.Page):
     page.title = "Aplicativo de Gerenciamento de Decks"
@@ -15,16 +15,26 @@ def main(page: ft.Page):
     deck_list = ft.Column()
 
     # Configuração de rotas
-    def on_route_change(route):
+    def route_change(route):
+        
         if route =="/":
+            
             splash_screen(page)
+            
         elif route == "/home":
+            
             show_home_screen(page)
+            
         elif route == "/decks":
+            
             show_deck_list_screen(page, deck_list)
+            
         elif route == "/add":
+            
             show_add_deck_screen(page, deck_name, deck_status, deck_list)
-    page.on_route_change = on_route_change
+            
+    
+    page.on_route_change = route_change
 
     # Configuração do AppBar e BottomAppBar
     page.appbar = ft.AppBar(
@@ -49,7 +59,7 @@ def main(page: ft.Page):
     )
 
     # Fundo degradê
-    page.bgcolor = ft.LinearGradient(colors=["#FFDEE9", "#B5FFFC"])
+    page.bgcolor = ft.LinearGradient(colors=["#33FFF6","#9809A2"])
 
     # Mostra a tela inicial por padrão
     show_home_screen(page)
