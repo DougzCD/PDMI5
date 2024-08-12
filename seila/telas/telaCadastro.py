@@ -2,9 +2,7 @@ import flet as ft
 
 class BaseScreen:
     
-
-
-
+    
 class CadastroScreen(BaseScreen):
     def __init__(self, page: ft.page):
         super().__init__(page)
